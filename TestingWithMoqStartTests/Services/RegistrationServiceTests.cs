@@ -60,7 +60,7 @@ namespace TestingWithFakesTests.Services
             _userRepository.ExistingUsers.Clear();
             for (int i = 1; i <= 11; i++)
             {
-                _userRepository.ExistingUsers.Add((i.ToString() + "@randomEmail.com") );
+                _userRepository.ExistingUsers.Add((i.ToString() + "@randomEmail.com"));
             }
 
             // ACT
@@ -70,7 +70,7 @@ namespace TestingWithFakesTests.Services
             Assert.AreEqual(RegistrationStatus.TooManyRegistrationsToday, result);
         }
 
-        // Test 4 Endast 10 nya användare per dag
+        // Test 4 Efter lyckad registrering ska ett välkomst-email skickas
         // Här testar vi att om registreringen har blivit OK...
         // ... delegerar vi till EmailService...
         // Så vi vill bekräfta att metoden SendWelcomeEmail(string email)
